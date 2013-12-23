@@ -38,6 +38,8 @@ AC_ARG_PROGRAM
 dnl Automake doc recommends to do this only here. (Janos)
 AM_INIT_AUTOMAKE(@MODULENAME@, @VERSION@) dnl searches for some needed programs
 
+AM_SILENT_RULES([yes])
+
 KDE_SET_PREFIX
 
 dnl generate the config header
