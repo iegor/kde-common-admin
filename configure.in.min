@@ -1,16 +1,16 @@
 dnl    This file is part of the KDE libraries/packages
 dnl    Copyright (C) 2001 Stephan Kulow (coolo@kde.org)
- 
+
 dnl    This file is free software; you can redistribute it and/or
 dnl    modify it under the terms of the GNU Library General Public
 dnl    License as published by the Free Software Foundation; either
 dnl    version 2 of the License, or (at your option) any later version.
- 
+
 dnl    This library is distributed in the hope that it will be useful,
 dnl    but WITHOUT ANY WARRANTY; without even the implied warranty of
 dnl    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 dnl    Library General Public License for more details.
- 
+
 dnl    You should have received a copy of the GNU Library General Public License
 dnl    along with this library; see the file COPYING.LIB.  If not, write to
 dnl    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
@@ -22,7 +22,8 @@ dnl    Boston, MA 02110-1301, USA.
 
 dnl Process this file with autoconf to produce a configure script.
 
-AC_INIT(acinclude.m4) dnl a source file from your sub dir
+dnl a source file from your sub dir
+AC_INIT(acinclude.m4)
 
 dnl This is so we can use kde-common
 AC_CONFIG_AUX_DIR(admin)
@@ -31,26 +32,28 @@ dnl This ksh/zsh feature conflicts with `cd blah ; pwd`
 unset CDPATH
 
 dnl Checking host/target/build systems, for make, install etc.
-AC_CANONICAL_SYSTEM 
+AC_CANONICAL_SYSTEM
+
 dnl Perform program name transformation
 AC_ARG_PROGRAM
 
 dnl Automake doc recommends to do this only here. (Janos)
-AM_INIT_AUTOMAKE(@MODULENAME@, @VERSION@) dnl searches for some needed programs
+dnl searches for some needed programs
+AM_INIT_AUTOMAKE(@MODULENAME@, @VERSION@)
 
 AM_SILENT_RULES([yes])
 
 KDE_SET_PREFIX
 
-dnl generate the config header
-AM_CONFIG_HEADER(config.h) dnl at the distribution this done
+dnl generate the config header at the distribution this done
+AM_CONFIG_HEADER(config.h)
 
 AC_PROG_CC
 AC_PROG_CXX
 AC_EXEEXT
 AC_OBJEXT
 
-dnl Checks for programs.
+dnl Checks for programs
 AC_CHECK_COMPILERS
 AC_ENABLE_SHARED(yes)
 AC_ENABLE_STATIC(no)
