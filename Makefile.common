@@ -31,7 +31,8 @@ configure.in: configure.files subdirs
 configure.files: subdirs
 
 svn: cvs
+git: cvs
 
 .SILENT:
 
-.PHONY: svn cvs dist package-merge package-messages
+.PHONY: git svn cvs dist package-merge package-messages
